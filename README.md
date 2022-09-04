@@ -1,8 +1,15 @@
 # Workshop Gatus
 
-Gatus 是一個使用 Go 的開源網站監控套件，
+[Gatus](https://github.com/TwiN/gatus) 是一個使用 Go 的開源網站監控套件，
 讀入 yaml 的 config 檔案，在檔案中定義要輪詢的 endpoints 以及輪詢的各項設定，
 並且可以串接 email, slack 等通知。
+
+## Requirement
+1. docker installed
+2. docker-compose installed
+3. yarn installed
+
+> recommended OS: Linux and macOS
 
 ## Prepare
 1. build demo server docker image
@@ -51,3 +58,6 @@ endpoints:
         description: cannot see
         send-on-resolved: true
 ```
+
+## Ref
+[推薦自動化監控網站運行服務 - Gatus](https://blog.wu-boy.com/2022/03/automated-service-health-dashboard-gatus/)
