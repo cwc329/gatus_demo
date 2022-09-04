@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  gatus:
+    environment:
+      WORKSHOP_HOST: "http://server:5566"
+    image: twinproduction/gatus:latest
+    ports:
+      - 8080:8080
+    volumes:
+      - ./config:/config
+      - ./data:/data/
+
+  server:
+    image: gatus_demo:latest
+    ports:
+      - 5566:5566

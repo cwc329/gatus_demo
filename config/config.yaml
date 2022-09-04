@@ -1,0 +1,44 @@
+storage:
+  type: sqlite
+  path: /data/data.db
+
+alerting:
+  email:
+    from: ""
+    to: ""
+    password: ""
+    port: 587
+    host: "smtp.gmail.com"
+
+endpoints:
+  - name: root
+    url: "${WORKSHOP_HOST}"
+    interval: 10s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: may break
+    url: "${WORKSHOP_HOST}/mayBreak"
+    interval: 10s
+    conditions:
+      - "[STATUS] < 300"
+      - "[STATUS] >= 200"
+
+  - name: slow
+    url: "${WORKSHOP_HOST}/slow"
+    interval: 10s
+    conditions:
+      - "[RESPONSE_TIME] < 2000"
+    alerts:
+      - type: email
+        enabled: true
+        description: slow responses
+        send-on-resolved: true
+
+  - name: good
+    url: "${WORKSHOP_HOST}/good"
+    interval: 10s
+    conditions:
+      - "[RESPONSE_TIME] < 2000"
+      - "[STATUS] == 200"
+      - "[BODY].status == UP"

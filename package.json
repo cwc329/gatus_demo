@@ -1,0 +1,16 @@
+{
+  "name": "20220823_winner_Gatus",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "scripts": {
+    "gatus:init": "mkdir data",
+    "gatus:up": "docker-compose up -d",
+    "gatus:down": "docker-compose down",
+    "start": "node index.js"
+  }
+}

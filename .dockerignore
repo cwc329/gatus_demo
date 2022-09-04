@@ -1,0 +1,6 @@
+*
+
+# Allow only needed files
+!/index.js
+!/package.json
+!/yarn.lock
