@@ -19,7 +19,8 @@ app.get('/mayBreak', async (req, res) => {
 });
 
 app.get('/slow', async (req, res) => {
-    await sleep(4);
+    const sleepTime = Math.random() * 4;
+    await sleep(sleepTime);
     res.sendStatus(200);
 });
 
