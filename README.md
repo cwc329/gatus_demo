@@ -27,9 +27,9 @@ yarn gatus:init
 yarn run gatus:up
 ```
 - end demo
-- ```shell
-  yarn run gatus:down
-- ```
+```shell
+yarn run gatus:down
+```
   
 ## Alerts
 使用 gmail 為例
